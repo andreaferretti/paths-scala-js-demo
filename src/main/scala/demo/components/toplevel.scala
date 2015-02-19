@@ -19,9 +19,7 @@ object toplevel {
     .render(_ =>
       div(className := "container",
         div(className := "row",
-          div(className := "col-md-6", id := "pie",
-            PieChart(countries)
-          )
+          div(className := "col-md-6", id := "pie", PieChart(countries))
         )
       )
     )

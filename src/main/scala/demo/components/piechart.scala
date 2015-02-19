@@ -22,7 +22,7 @@ object piechart {
         accessor = _.population,
         r = 60,
         R = 140,
-        center = (10, 10)
+        center = (0, 0)
       )
       val slices = pie.curves map { curve =>
         g(
