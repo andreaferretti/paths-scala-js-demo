@@ -40,13 +40,8 @@ object piechart {
         )
       }
 
-      svg(
-        width := 400,
-        height := 400,
-        g(
-          transform := move(js.Array(200, 200)),
-          slices
-        )
+      svg(width := 400, height := 400,
+        g(transform := move(js.Array(200, 200)), slices)
       )
     })
     .build
