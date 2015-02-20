@@ -2,7 +2,7 @@ package demo.components
 
 import scala.scalajs.js
 import japgolly.scalajs.react._
-// import japgolly.scalajs.react.vdom.all._
+import japgolly.scalajs.react.vdom.all.key
 import japgolly.scalajs.react.vdom.svg.all._
 import paths.high.Pie
 
@@ -15,7 +15,7 @@ object piechart {
   private def move(p: js.Array[Double]) = s"translate(${ p(0) },${ p(1) })"
   private val palette = mix(Color(130, 140, 210), Color(180, 205, 150))
 
-  val PieChart = ReactComponentB[List[Country]]("Item list")
+  val PieChart = ReactComponentB[List[Country]]("Pie chart")
     .render(countries => {
       val pie = Pie[Country](
         data = countries,
@@ -25,7 +25,7 @@ object piechart {
         center = (0, 0)
       )
       val slices = pie.curves map { curve =>
-        g(
+        g(key := curve.item.name)(
           lineargradient(
             id := s"grad-${ curve.index }",
             stop(stopColor := string(palette(curve.index)), offset := "0%"),

@@ -3,6 +3,7 @@ package demo.components
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.all._
 
+import panel._
 import piechart._
 
 
@@ -19,7 +20,11 @@ object toplevel {
     .render(_ =>
       div(className := "container",
         div(className := "row",
-          div(className := "col-md-6", id := "pie", PieChart(countries))
+          Panel(PanelContent(
+            id = Some("pie"),
+            title = "Pie Chart",
+            text = "Here is a pie chart example. Sectors are clickable"
+          ), PieChart(countries))
         )
       )
     )
