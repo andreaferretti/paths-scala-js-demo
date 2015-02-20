@@ -4,6 +4,7 @@ import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.all._
 
 import panel._
+import logo._
 import piechart._
 
 
@@ -19,11 +20,12 @@ object toplevel {
   val TopLevel = ReactComponentB[Unit]("Top level component")
     .render(_ =>
       div(className := "container",
+        div(className := "row", Logo(())),
         div(className := "row",
           Panel(PanelContent(
             id = Some("pie"),
             title = "Pie Chart",
-            text = "Here is a pie chart example. Sectors are clickable"
+            text = "Here is a pie chart example"
           ), PieChart(countries))
         )
       )
