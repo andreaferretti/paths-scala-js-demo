@@ -20,4 +20,4 @@ and then opening `index.html`.
 Status
 ------
 
-The demo is still incomplete, and fails to show many of Paths.scala.js features. The [Paths.js demo](https://github.com/andreaferretti/paths-js-demo) better showcases what can be done.
+The demo is still incomplete, and fails to show many of Paths.scala.js features. The [Paths.js demo](http://andreaferretti.github.io/paths-js-demo/) better showcases what can be done.
