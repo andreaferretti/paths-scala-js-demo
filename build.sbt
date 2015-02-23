@@ -22,6 +22,6 @@ libraryDependencies ++= Seq(
 )
 
 jsDependencies ++= Seq(
-  "org.webjars" % "react" % "0.12.1" / "react-with-addons.js" commonJSName "React"
-//  ProvidedJS / "paths.js"
+  "org.webjars" % "react" % "0.12.1" / "react-with-addons.js" commonJSName "React",
+  "org.webjars" % "paths-js" % "0.3.2" / "paths.js"
 )
