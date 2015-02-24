@@ -1,6 +1,5 @@
 package demo.components
 
-import scala.util.Random
 import scala.scalajs.js
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.all.{ a, h1, h3, href, div, className, onClick }
@@ -28,8 +27,9 @@ object logo {
   )
 
   class Backend($: BackendScope[Unit, Points]) {
-    def randomize(ps: Points) = ps map { case (x, y) => (x, y - 25 + 50 * Random.nextDouble) }
-    def onClick(e: ReactEventI) = $.animateModState(randomize)
+    def randomize(ps: Points) = ps map { case (x, y) => (x, y - 25 + 50 * js.Math.random()) }
+    def onClick(e: ReactEventI) = $.animateModState(randomize, AnimateOptions(done = goBack))
+    def goBack(u: Unit) = $.animateState(points, AnimateOptions(easing = Easing.easeOutElastic))
   }
 
   val Logo = ReactComponentB[Unit]("Paths.js")
