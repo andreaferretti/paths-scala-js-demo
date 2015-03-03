@@ -83,3 +83,28 @@
   border-radius: 5px;
   background: #eeeeee;
 }
+
+/*Radar*/
+
+#radar path {
+  opacity: 0.8;
+}
+
+#radar text {
+  font-size: 10px;
+}
+
+#radar .pokemon-info {
+  float: right;
+  min-width: 140px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #eeeeee;
+}
+
+#radar .label {
+  float: right;
+}
