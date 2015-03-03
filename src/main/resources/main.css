@@ -23,10 +23,10 @@
 
 @font-face {
   font-family: "Forque";
-  src: url('/fonts/Forque.woff') format('woff'),
-    url('/fonts/Forque.svg') format('svg'),
-    url('/fonts/Forque.ttf') format('truetype'),
-    url('/fonts/Forque.eot') format('embedded-opentype');
+  src: url('../fonts/Forque.woff') format('woff'),
+    url('../fonts/Forque.svg') format('svg'),
+    url('../fonts/Forque.ttf') format('truetype'),
+    url('../fonts/Forque.eot') format('embedded-opentype');
 }
 
 #logo {
