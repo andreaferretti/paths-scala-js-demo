@@ -7,6 +7,7 @@ import panel._
 import logo._
 import piechart._
 import radar._
+import tree._
 
 
 object toplevel {
@@ -27,6 +28,20 @@ object toplevel {
     Pokemon("Blastoise", 79, 83, 100, 85, 105, 78),
     Pokemon("Butterfree", 60, 45, 50, 90, 80, 70)
   )
+  val tree = Duck("Grandma", List(
+    Duck("Eider", List(
+      Duck("Fethry"), Duck("Abner")
+    )),
+    Duck("Daphne", List(
+      Duck("Gladstone")
+    )),
+    Duck("Quackmore", List(
+      Duck("Donald"),
+      Duck("Della", List(
+        Duck("Huey"), Duck("Dewey"), Duck("Louie")
+      ))
+    ))
+  ))
 
   val TopLevel = ReactComponentB[Unit]("Top level component")
     .render(_ =>
@@ -43,6 +58,13 @@ object toplevel {
             title = "Radar Chart",
             text = "Here is a radar chart showing Pokémon stats. Try changing Pokémon."
           ), RadarChart(pokemons))
+        ),
+        div(className := "row",
+          Panel(PanelContent(
+            id = Some("tree"),
+            title = "Tree Chart",
+            text = "Here is part of the duck family tree."
+          ), TreeChart(tree))
         )
       )
     )
