@@ -14,7 +14,7 @@ object tree {
   private def move(p: js.Array[Double]) = s"translate(${ p(0) },${ p(1) })"
   private def isLeaf(duck: Duck) = duck.descendants.length == 0
 
-  val TreeChart = ReactComponentB[Duck]("Pie chart")
+  val TreeChart = ReactComponentB[Duck]("Tree chart")
     .render(ducks => {
       val tree = Tree[Duck](
         data = ducks,

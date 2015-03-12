@@ -8,6 +8,7 @@ import logo._
 import piechart._
 import radar._
 import tree._
+import bar._
 
 
 object toplevel {
@@ -42,6 +43,14 @@ object toplevel {
       ))
     ))
   ))
+  val stats = Stats(
+    values = List(
+      List(1, 2.0, 3, 4),
+      List(2, 3.0, 1, 4),
+      List(2, 2.5, 3, 3)
+    ),
+    labels = List("2009", "2010", "2011", "2012")
+  )
 
   val TopLevel = ReactComponentB[Unit]("Top level component")
     .render(_ =>
@@ -64,7 +73,12 @@ object toplevel {
             id = Some("tree"),
             title = "Tree Chart",
             text = "Here is part of the duck family tree."
-          ), TreeChart(tree))
+          ), TreeChart(tree)),
+          Panel(PanelContent(
+            id = Some("bar"),
+            title = "Bar Chart",
+            text = "Here is a bar chart example."
+          ), BarChart(stats))
         )
       )
     )
