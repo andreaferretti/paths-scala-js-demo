@@ -91,7 +91,7 @@ object radar {
           p("Sp. Attack: ", span(className := "label label-info", pokemon.spAttack.toInt)),
           p("Sp. Defense: ", span(className := "label label-info", pokemon.spDefense.toInt))
         ),
-        svg(width := 375, height := 400,
+        svg(width := 375, height := 370,
           g(transform := "translate(200, 200)", rings, polygons)
         )
       )
