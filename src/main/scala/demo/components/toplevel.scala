@@ -9,6 +9,7 @@ import piechart._
 import radar._
 import tree._
 import bar._
+import graph._
 
 
 object toplevel {
@@ -51,6 +52,29 @@ object toplevel {
     ),
     labels = List("2009", "2010", "2011", "2012")
   )
+  val family = Family(
+    characters = List(
+      Character("pippo"),
+      Character("pluto"),
+      Character("paperino"),
+      Character("qui"),
+      Character("quo"),
+      Character("qua"),
+      Character("nonna papera"),
+      Character("ciccio")
+    ),
+    links = List(
+      Link(start = "pippo", end = "quo", weight = 10),
+      Link(start = "pippo", end = "qua", weight = 30),
+      Link(start = "pluto", end = "nonna papera", weight = 10),
+      Link(start = "pluto", end = "qui", weight = 10),
+      Link(start = "pluto", end = "quo", weight = 10),
+      Link(start = "paperino", end = "ciccio", weight = 100),
+      Link(start = "qui", end = "ciccio", weight =  20),
+      Link(start = "quo", end = "ciccio", weight =  10),
+      Link(start = "qua", end = "nonna papera", weight =  30)
+    )
+  )
 
   val TopLevel = ReactComponentB[Unit]("Top level component")
     .render(_ =>
@@ -79,6 +103,13 @@ object toplevel {
             title = "Bar Chart",
             text = "Here is a bar chart example."
           ), BarChart(stats))
+        ),
+        div(className := "row",
+          Panel(PanelContent(
+            id = Some("graph"),
+            title = "Graph Chart",
+            text = "A preliminary example of force-directed graph."
+          ), GraphChart(family))
         )
       )
     )
