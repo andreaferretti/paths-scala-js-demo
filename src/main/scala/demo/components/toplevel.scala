@@ -1,5 +1,6 @@
 package demo.components
 
+import scala.scalajs.js
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.all._
 
@@ -52,29 +53,16 @@ object toplevel {
     ),
     labels = List("2009", "2010", "2011", "2012")
   )
-  val family = Family(
-    characters = List(
-      Character("pippo"),
-      Character("pluto"),
-      Character("paperino"),
-      Character("qui"),
-      Character("quo"),
-      Character("qua"),
-      Character("nonna papera"),
-      Character("ciccio")
-    ),
-    links = List(
-      Link(start = "pippo", end = "quo", weight = 10),
-      Link(start = "pippo", end = "qua", weight = 30),
-      Link(start = "pluto", end = "nonna papera", weight = 10),
-      Link(start = "pluto", end = "qui", weight = 10),
-      Link(start = "pluto", end = "quo", weight = 10),
-      Link(start = "paperino", end = "ciccio", weight = 100),
-      Link(start = "qui", end = "ciccio", weight =  20),
-      Link(start = "quo", end = "ciccio", weight =  10),
-      Link(start = "qua", end = "nonna papera", weight =  30)
-    )
-  )
+  def randomGraph(n: Int, density: Double) = {
+    val characters = (1 to n) map { x => Character(x.toString) }
+    val links = characters.combinations(2) filter { _ =>
+      js.Math.random() < density
+    } map { case Vector(Character(a), Character(b)) =>
+      Link(a, b, 3 + 5 * js.Math.random())
+    }
+
+    Family(characters = characters.toList, links = links.toList)
+  }
 
   val TopLevel = ReactComponentB[Unit]("Top level component")
     .render(_ =>
@@ -109,7 +97,7 @@ object toplevel {
             id = Some("graph"),
             title = "Graph Chart",
             text = "A preliminary example of force-directed graph."
-          ), GraphChart(family))
+          ), GraphChart(randomGraph(30, 0.15)))
         )
       )
     )
