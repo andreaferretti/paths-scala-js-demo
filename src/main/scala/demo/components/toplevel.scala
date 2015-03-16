@@ -100,6 +100,17 @@ object toplevel {
       div(className := "container",
         div(className := "row", Logo(())),
         div(className := "row",
+          div(className := "col-md-12",
+            p(className := "alert alert-success",
+              "For simplicity, many animations have been stripped out from the Scala.js demo. See ",
+              a(href := "http://andreaferretti.github.io/paths-js-demo/", "this demo"),
+              " or ",
+              a(href := "http://andreaferretti.github.io/paths-js-react-demo/", "this demo"),
+              " for an overview of the possibilities."
+            )
+          )
+        ),
+        div(className := "row",
           Panel(PanelContent(
             id = Some("pie"),
             title = "Pie Chart",
