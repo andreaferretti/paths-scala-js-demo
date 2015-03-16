@@ -11,6 +11,7 @@ import radar._
 import tree._
 import bar._
 import graph._
+import sankey._
 
 
 object toplevel {
@@ -63,6 +64,36 @@ object toplevel {
 
     Family(characters = characters.toList, links = links.toList)
   }
+  val flow = Flow(
+    sectors = List(
+      List(
+        Sector("Energy"),
+        Sector("Agriculture"),
+        Sector("Minerals")
+      ),
+      List(
+        Sector("Transportation"),
+        Sector("Harvest"),
+        Sector("Fuel")
+      ),
+      List(
+        Sector("Road"),
+        Sector("Chemicals")
+      )
+    ),
+    links = List(
+      SLink(start = "Energy", end = "Harvest", weight = 10),
+      SLink(start = "Energy", end = "Fuel", weight = 30),
+      SLink(start = "Agriculture", end = "Road", weight = 10),
+      SLink(start = "Agriculture", end = "Transportation", weight = 10),
+      SLink(start = "Agriculture", end = "Harvest", weight = 10),
+      SLink(start = "Minerals", end = "Fuel", weight = 30),
+      SLink(start = "Transportation", end = "Chemicals", weight =  20),
+      SLink(start = "Harvest", end = "Chemicals", weight =  10),
+      SLink(start = "Fuel", end = "Road", weight =  30),
+      SLink(start = "Minerals", end = "Chemicals", weight =  25)
+    )
+  )
 
   val TopLevel = ReactComponentB[Unit]("Top level component")
     .render(_ =>
@@ -97,7 +128,12 @@ object toplevel {
             id = Some("graph"),
             title = "Graph Chart",
             text = "A preliminary example of force-directed graph."
-          ), GraphChart(randomGraph(30, 0.15)))
+          ), GraphChart(randomGraph(30, 0.15))),
+          Panel(PanelContent(
+            id = Some("sankey"),
+            title = "Sankey Diagram",
+            text = "Displays flow among entities."
+          ), SankeyDiagram(flow))
         )
       )
     )
