@@ -119,3 +119,14 @@
   stroke: #336699;
   fill: none;
 }
+
+/*Graph*/
+
+#graph circle {
+  stroke: none;
+  fill: #828cd2;
+}
+#graph path {
+  stroke: #336699;
+  fill: none;
+}
