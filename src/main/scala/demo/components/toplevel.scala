@@ -205,22 +205,7 @@ object toplevel {
       Event("Sep 2008", 25.78),
       Event("Oct 2008", 21.57),
       Event("Nov 2008", 19.66),
-      Event("Dec 2008", 18.91),
-      Event("Jan 2009", 16.63),
-      Event("Feb 2009", 15.81),
-      Event("Mar 2009", 17.99),
-      Event("Apr 2009", 19.84),
-      Event("May 2009", 20.59),
-      Event("Jun 2009", 23.42),
-      Event("Jul 2009", 23.18),
-      Event("Aug 2009", 24.43),
-      Event("Sep 2009", 25.49),
-      Event("Oct 2009", 27.48),
-      Event("Nov 2009", 29.27),
-      Event("Dec 2009", 30.34),
-      Event("Jan 2010", 28.05),
-      Event("Feb 2010", 28.67),
-      Event("Mar 2010", 28.8)
+      Event("Dec 2008", 18.91)
     ),
     List(
       Event("Jan 2000", 25.94),
@@ -330,22 +315,7 @@ object toplevel {
       Event("Sep 2008", 113.66),
       Event("Oct 2008", 107.59),
       Event("Nov 2008", 92.67),
-      Event("Dec 2008", 85.35),
-      Event("Jan 2009", 90.13),
-      Event("Feb 2009", 89.31),
-      Event("Mar 2009", 105.12),
-      Event("Apr 2009", 125.83),
-      Event("May 2009", 135.81),
-      Event("Jun 2009", 142.43),
-      Event("Jul 2009", 163.39),
-      Event("Aug 2009", 168.21),
-      Event("Sep 2009", 185.35),
-      Event("Oct 2009", 188.5),
-      Event("Nov 2009", 199.91),
-      Event("Dec 2009", 210.73),
-      Event("Jan 2010", 192.06),
-      Event("Feb 2010", 204.62),
-      Event("Mar 2010", 223.02)
+      Event("Dec 2008", 85.35)
     ),
     List(
       Event("Jan 2000", 64.56),
@@ -455,22 +425,7 @@ object toplevel {
       Event("Sep 2008", 72.76),
       Event("Oct 2008", 57.24),
       Event("Nov 2008", 42.7),
-      Event("Dec 2008", 51.28),
-      Event("Jan 2009", 58.82),
-      Event("Feb 2009", 64.79),
-      Event("Mar 2009", 73.44),
-      Event("Apr 2009", 80.52),
-      Event("May 2009", 77.99),
-      Event("Jun 2009", 83.66),
-      Event("Jul 2009", 85.76),
-      Event("Aug 2009", 81.19),
-      Event("Sep 2009", 93.36),
-      Event("Oct 2009", 118.81),
-      Event("Nov 2009", 135.91),
-      Event("Dec 2009", 134.52),
-      Event("Jan 2010", 125.41),
-      Event("Feb 2010", 118.4),
-      Event("Mar 2010", 128.82)
+      Event("Dec 2008", 51.28)
     )
   )
 
