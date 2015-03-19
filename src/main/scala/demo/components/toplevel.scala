@@ -14,6 +14,7 @@ import graph._
 import sankey._
 import line._
 import smoothline._
+import waterfall._
 
 
 object toplevel {
@@ -428,6 +429,14 @@ object toplevel {
       Event("Dec 2008", 51.28)
     )
   )
+  val balance = List(
+    Total("Gross income", 30),
+    Expense("Transport", 6),
+    Expense("Distribution", 3),
+    RunningTotal("Detail income"),
+    Expense("Taxes", 8),
+    RunningTotal("Net income")
+  )
 
   val TopLevel = ReactComponentB[Unit]("Top level component")
     .render(_ =>
@@ -491,6 +500,13 @@ object toplevel {
             title = "Smooth Line Chart",
             text = "And here is the same example drawn smoothly."
           ), SmoothLineChart(tickers))
+        ),
+        div(className := "row",
+          Panel(PanelContent(
+            id = Some("waterfall"),
+            title = "Waterfall Chart",
+            text = "A breakdown of incomes and costs."
+          ), WaterfallChart(balance))
         )
       )
     )
