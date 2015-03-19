@@ -130,3 +130,9 @@
   stroke: #336699;
   fill: none;
 }
+
+/*Waterfall*/
+
+#waterfall text {
+  font-size: 10px;
+}
