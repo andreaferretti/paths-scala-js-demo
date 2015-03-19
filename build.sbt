@@ -15,12 +15,10 @@ scalacOptions ++= Seq(
   "-deprecation"
 )
 
-resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
-
 libraryDependencies ++= Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.8.0",
     "com.github.japgolly.scalajs-react" %%% "core" % "0.8.1",
-    "eu.unicredit" %%% "paths-scala-js" % "0.3.2-SNAPSHOT"
+    "eu.unicredit" %%% "paths-scala-js" % "0.3.2"
 )
 
 jsDependencies ++= Seq(
