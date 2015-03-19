@@ -20,4 +20,7 @@ and then opening `index.html`.
 Status
 ------
 
-The demo is still incomplete, and fails to show many of Paths.scala.js features. The [Paths.js demo](http://andreaferretti.github.io/paths-js-demo/) better showcases what can be done.
+The demo shows the various features of Paths.scala.js, but it is mostly static.
+It is possible to make much more complex charts with animations, as shown in the
+[original Paths.js demo](http://andreaferretti.github.io/paths-js-demo) or the
+[React Paths.js demo](https://github.com/andreaferretti/paths-js-react-demo)
