@@ -4,7 +4,7 @@ name := "paths-scala-js-demo"
 
 version := "0.1-SNAPSHOT"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.7"
 
 persistLauncher in Compile := true
 
@@ -18,7 +18,7 @@ scalacOptions ++= Seq(
 libraryDependencies ++= Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.8.0",
     "com.github.japgolly.scalajs-react" %%% "core" % "0.8.1",
-    "eu.unicredit" %%% "paths-scala-js" % "0.3.2"
+    "eu.unicredit" %%% "paths-scala-js" % "0.3.5"
 )
 
 jsDependencies ++= Seq(
