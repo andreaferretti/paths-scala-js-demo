@@ -15,6 +15,8 @@ import sankey._
 import line._
 import smoothline._
 import waterfall._
+import voronoi._
+import stack._
 
 
 object toplevel {
@@ -97,6 +99,9 @@ object toplevel {
       SLink(start = "Minerals", end = "Chemicals", weight =  25)
     )
   )
+  val voronoiPoints = (1 to 30) map { _ =>
+    (js.Math.random(), js.Math.random())
+  }
   val tickers = List(
     List(
       Event("Jan 2000", 39.81),
@@ -506,7 +511,19 @@ object toplevel {
             id = Some("waterfall"),
             title = "Waterfall Chart",
             text = "A breakdown of incomes and costs."
-          ), WaterfallChart(balance))
+          ), WaterfallChart(balance)),
+          Panel(PanelContent(
+            id = Some("voronoi"),
+            title = "Voronoi Diagram",
+            text = "A convex tiling of the plane."
+          ), VoronoiChart(voronoiPoints))
+        ),
+        div(className := "row",
+          Panel(PanelContent(
+            id = Some("stack"),
+            title = "Stack Chart",
+            text = "Here is a stacked bar chart example."
+          ), StackChart(stats))
         )
       )
     )

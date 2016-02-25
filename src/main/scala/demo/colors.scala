@@ -22,7 +22,7 @@ object colors {
 
   def mix(c1: Color, c2: Color) = {
     val c3 = average(c1, c2)
-    List(
+    val colors = List(
       lighten(c1),
       c1,
       darken(c1),
@@ -33,6 +33,8 @@ object colors {
       c2,
       darken(c2)
     )
+
+    Stream.continually(colors).flatten
   }
 
   def transparent(c: Color, alpha: Double = 0.7) = c.copy(alpha = alpha)
