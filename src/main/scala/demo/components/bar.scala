@@ -21,7 +21,8 @@ object bar {
         accessor = identity,
         width = 380,
         height = 300,
-        gutter = 10
+        gutter = 10,
+        offset = (80, 50)
       )
       val groups = stats.values.length
       val middle = groups / 2
@@ -36,7 +37,7 @@ object bar {
       }
 
       svg(width := 460, height := 400,
-        g(transform := "translate(80,50)", rectangles)
+        rectangles
       )
     })
     .build
